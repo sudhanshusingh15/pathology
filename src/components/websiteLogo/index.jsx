@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-import WebsiteLogoImg from "../../images/logos/logo1.svg";
-// import WebsiteLogoImg from "/Users/sudhanshusingh/Desktop/Senior Design/pathology/src/images/logos/logo2.svg";
+// import WebsiteLogoImg from "../../images/logos/logo1.svg";
+import WebsiteLogoImg from "/Users/sudhanshusingh/Desktop/Senior Design/pathology/src/images/logos/logo2.svg";
 
 
 const WebsiteLogoContainer = styled.div`
@@ -13,7 +14,8 @@ const WebsiteLogoContainer = styled.div`
 const LogoImage = styled.div`
     width: ${({size}) => (size ? size + "px" : "30em")};
     height: ${({size}) => (size ? size + "px" : "5em")};
-    margin-left: 1em;
+    margin-top: 1.25em;
+    margin-left: 0em;
     img {
         width: 100%;
         height: 100%;
@@ -37,7 +39,9 @@ export function WebsiteLogo(props) {
   return (
     <WebsiteLogoContainer>
         <LogoImage size={size}>
+            <Link to="./containers/HomePage">
             <img src={WebsiteLogoImg} alt="website logo" />
+            </Link>
         </LogoImage>
         {/* <LogoTitle size={size}> Digitial Pathology </LogoTitle> */}
     </WebsiteLogoContainer>

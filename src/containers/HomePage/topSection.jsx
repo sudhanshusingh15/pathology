@@ -2,9 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 import TopSectionBackgroundImg from "../../images/landing-page.jpg";
-import PathologistImg from "../../images/medical_reasearch_svg.svg";
+// import PathologistImg from "../../images/medical_reasearch_svg.svg";
 import PathologistImg2 from "../../images/Researchers-pana.svg";
 import { WebsiteLogo } from "../../components/websiteLogo";
+// import { Marginer } from "../../components/marginer";
+
 
 const TopSectionContainer = styled.div`
     width: 100%;
@@ -14,10 +16,18 @@ const TopSectionContainer = styled.div`
     background-size: cover;
 `;
 
+// const BackgroundFilter = styled.div`
+//     width: 100%;
+//     height: 100%;
+//     background: linear-gradient(to right, rgba(35,45,56,1), rgba(255,198,0,0.4));
+//     display: flex;
+//     flex-direction: column;
+// `;
+
 const BackgroundFilter = styled.div`
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(35,45,56,1), rgba(255,198,0,0.4));
+    background: rgba(35,45,56,0.85);
     display: flex;
     flex-direction: column;
 `;
@@ -69,11 +79,14 @@ const WebsiteTitleText = styled.h1`
 // `;
 
 export function TopSection(props) {
+  const {children} = props;
+
   return(
     <TopSectionContainer>
       <BackgroundFilter>
+        {children}
         <WebsiteLogoContainer>
-          <WebsiteLogo/>
+          {/* <WebsiteLogo/> */}
         </WebsiteLogoContainer>
         <TopSectionInnerContainer>
         <StandoutImage>
