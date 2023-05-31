@@ -91,6 +91,10 @@ export function Navbar(props){
                 </AnchorLinkContainer>
                 <SepartionLine/>
                 <AnchorLinkContainer>
+                    <AnchorLink>UPLOAD</AnchorLink>
+                </AnchorLinkContainer>
+                <SepartionLine/>
+                <AnchorLinkContainer>
                     <AnchorLink>ABOUT</AnchorLink>
                 </AnchorLinkContainer>
             </AccessibilityContainer>

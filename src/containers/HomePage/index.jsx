@@ -6,6 +6,7 @@ import { Navbar } from "../../components/navbar";
 import { TechStack } from "../../components/techstack";
 import { deviceSize } from "../../components/responsive";
 import { ContactAd } from "../../components/contactus";
+import { Footer } from "../../components/footer";
 
 const ContentContainer = styled.div`
   width: 100%;
@@ -29,10 +30,11 @@ export function HomePage(props){
             <InnerPageContainer>
                 <ContentContainer>
                     <TechStack />
-                    
                 </ContentContainer>
                 <ContactAd />
             </InnerPageContainer>
+            <Footer />
         </PageContainer>
     );
 }
+

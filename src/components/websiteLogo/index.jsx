@@ -14,6 +14,7 @@ const WebsiteLogoContainer = styled.div`
 const LogoImage = styled.div`
     width: ${({size}) => (size ? size + "px" : "30em")};
     height: ${({size}) => (size ? size + "px" : "5em")};
+    color: ${({ color }) => (color ? color : "#fff")};
     margin-top: 1.25em;
     margin-left: 0em;
     img {
@@ -35,10 +36,10 @@ const LogoImage = styled.div`
 
 
 export function WebsiteLogo(props) {
-    const {size} = props;
+    const {size, color} = props;
   return (
     <WebsiteLogoContainer>
-        <LogoImage size={size}>
+        <LogoImage size={size} color={color}>
             <Link to="./containers/HomePage">
             <img src={WebsiteLogoImg} alt="website logo" />
             </Link>
