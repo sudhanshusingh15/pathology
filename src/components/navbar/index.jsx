@@ -68,6 +68,8 @@ const AnchorLink = styled.a`
     }
 `;
 
+
+
 const SepartionLine = styled.div`
     min-width: 2px;
     height: 20%;
@@ -86,6 +88,10 @@ export function Navbar(props){
                 <SepartionLine/>
                 <AnchorLinkContainer>
                     <AnchorLink>REGISTER</AnchorLink>
+                </AnchorLinkContainer>
+                <SepartionLine/>
+                <AnchorLinkContainer>
+                    <AnchorLink>ABOUT</AnchorLink>
                 </AnchorLinkContainer>
             </AccessibilityContainer>
         </NavbarContainer>
