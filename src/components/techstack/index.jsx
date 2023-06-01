@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import TechStackImg from "../../images/techstack.png";
+import TechStackImg from "../../images/techstackx.svg";
 
 
 // const PageWrapper = styled.div`
@@ -25,7 +25,7 @@ const PageWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: yellow;
+    background-color: white;
 `;
 
 const Title = styled.h2`

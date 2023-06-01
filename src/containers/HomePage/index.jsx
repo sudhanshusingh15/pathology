@@ -7,6 +7,7 @@ import { TechStack } from "../../components/techstack";
 import { deviceSize } from "../../components/responsive";
 import { ContactAd } from "../../components/contactus";
 import { Footer } from "../../components/footer";
+import { Marginer } from "../../components/marginer";
 
 const ContentContainer = styled.div`
   width: 100%;
@@ -27,12 +28,14 @@ export function HomePage(props){
             <TopSection>
                 <Navbar useTransparent/>
             </TopSection>
+            <Marginer direction="vertical" margin="5px" />
             <InnerPageContainer>
                 <ContentContainer>
                     <TechStack />
                 </ContentContainer>
                 <ContactAd />
             </InnerPageContainer>
+            <Marginer direction="vertical" margin="5px" />
             <Footer />
         </PageContainer>
     );

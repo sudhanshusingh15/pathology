@@ -59,15 +59,27 @@ const WebsiteLogoContainer = styled.div`
 
 
 const WebsiteTitleText = styled.h1`
-  font-size: 26px;
+  font-size: 60px;
   font: 'SF Pro, sans-serif';
   margin: 0;
   color: white;
-  line-height: 1.8em;
   margin-bottom: 1em;
   max-width: 800px; /* Added this line */
   word-break: break-word; /* Added this line */
 `;
+
+// const WebsiteTitleText = styled.h1`
+//     font-family: "Raleway", sans-serif;
+//     color: #fff;
+//     font-size: 60px;
+//     font-weight: 700;
+//     text-transform: uppercase;
+//     margin-top: 0;
+//     margin-bottom: 10px; 
+//     max-width: 800px; /* Added this line */
+//     word-break: break-word; /* Added this line */ 
+
+// `;
 
 
 // const SloganText = styled.h2`
@@ -84,7 +96,7 @@ export function TopSection(props) {
   const {children} = props;
 
   const isMobile = useMediaQuery({ maxWidth: deviceSize});
-  
+
 
   return(
     <TopSectionContainer>
@@ -97,7 +109,7 @@ export function TopSection(props) {
         <StandoutImage>
           <img src={PathologistImg2} alt="pathologist" />
         </StandoutImage>
-        <WebsiteTitleText>Digital Pathology is a user-friendly platform that uses machine learning for efficient sinusitis diagnosis with whole slide images. This ElectronJS and React built tool simplifies image uploads and customization of pre-processing. It utilizes advanced image processing techniques and a Unified Image Reader to ensure precise diagnosis and efficient data handling offering speed, flexibility, and accuracy.</WebsiteTitleText>
+        <WebsiteTitleText>Sinusitis severity classification using WSI and deep learning techniques</WebsiteTitleText>
         </TopSectionInnerContainer>
       </BackgroundFilter>
     </TopSectionContainer>
