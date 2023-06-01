@@ -14,7 +14,8 @@ const ContentContainer = styled.div`
   max-width: ${deviceSize.laptop}px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex;
+
   
 
   @media screen and (max-width: ${deviceSize.mobile}px) {

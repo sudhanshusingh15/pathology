@@ -68,29 +68,6 @@ const WebsiteTitleText = styled.h1`
   word-break: break-word; /* Added this line */
 `;
 
-// const WebsiteTitleText = styled.h1`
-//     font-family: "Raleway", sans-serif;
-//     color: #fff;
-//     font-size: 60px;
-//     font-weight: 700;
-//     text-transform: uppercase;
-//     margin-top: 0;
-//     margin-bottom: 10px; 
-//     max-width: 800px; /* Added this line */
-//     word-break: break-word; /* Added this line */ 
-
-// `;
-
-
-// const SloganText = styled.h2`
-//     font-size: 24px;
-//     font: 'SF Pro';
-//     margin: 0;
-//     color: white;
-//     line-height: 1.8em;
-//     margin-bottom: 11em;
-
-// `;
 
 export function TopSection(props) {
   const {children} = props;

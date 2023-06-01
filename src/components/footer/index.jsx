@@ -44,7 +44,7 @@ const BottomContainer = styled.div`
     height: 70px;
     justify-content: space-between;
     display: flex;
-    border-top: 0.6px solid #000000;
+    border-top: 5px solid #FFC600;
     padding-top: 10px;
 
 `;
@@ -81,7 +81,8 @@ const FLink = styled.a`
 `;
 
 const PrivacyText = styled.h6`
-    
+    margin-top: 5em;
+    margin-right: 11em;
     color: #6F6F6F;
     font-size: 11px;
     
@@ -112,10 +113,10 @@ export function Footer(props){
                     <PrivacyText>© All Rights Reserved 2023</PrivacyText>
                 </LeftBottomContainer>
                 <RightBottomContainer>
-                    <FLink href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                    <FLink href="https://github.com/sudhanshusingh15/pathology" style={{marginRight: "10px"}} target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={faGithub} size="2x" />
                     </FLink>
-                    <FLink href="https://www.instagram.com/" style={{marginLeft: "10px"}} target="_blank" rel="noopener noreferrer">
+                    <FLink href="https://senior-project-drexel.web.app/projects/75" style={{marginLeft: "10px"}} target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={faGlobe} size="2x" />
                     </FLink>
                 </RightBottomContainer>
