@@ -5,7 +5,9 @@ import TopSectionBackgroundImg from "../../images/landing-page.jpg";
 // import PathologistImg from "../../images/medical_reasearch_svg.svg";
 import PathologistImg2 from "../../images/Researchers-pana.svg";
 import { WebsiteLogo } from "../../components/websiteLogo";
+import { useMediaQuery } from "react-responsive";
 // import { Marginer } from "../../components/marginer";
+import { deviceSize } from "../../components/responsive";
 
 
 const TopSectionContainer = styled.div`
@@ -80,6 +82,9 @@ const WebsiteTitleText = styled.h1`
 
 export function TopSection(props) {
   const {children} = props;
+
+  const isMobile = useMediaQuery({ maxWidth: deviceSize});
+  
 
   return(
     <TopSectionContainer>
