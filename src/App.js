@@ -1,9 +1,3 @@
-// import React from 'react';
-// import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-// import './App.css';
-// import { HomePage } from './containers/HomePage';
-// import { CustomerAccessPage } from './containers/customerAccessPage';
-// import { UploadPage } from './containers/upload';
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
@@ -32,3 +26,6 @@ function App() {
 }
 
 export default App;
+
+
+

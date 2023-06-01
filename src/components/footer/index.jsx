@@ -96,8 +96,8 @@ export function Footer(props){
             <TopContainer>
                 <ContentContainer>
                     <Title>Useful Links</Title>
-                    <FLink href="">About</FLink>
-                    <FLink href="">Project Website</FLink>
+                    <FLink href="/about">About</FLink>
+                    <FLink href="https://senior-project-drexel.web.app/projects/75">Project Website</FLink>
                     <FLink href="https://drexel.us4.list-manage.com/subscribe?u=34daeb1d15768cc8cb569e3b5&id=2e01407592">Drexel CCI Newsletter</FLink>
                 </ContentContainer>
                 <ContentContainer>
