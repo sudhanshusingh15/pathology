@@ -25,7 +25,7 @@ export function HomePage(props){
     return(
         <PageContainer>
             <TopSection>
-                <Navbar/>
+                <Navbar useTransparent/>
             </TopSection>
             <InnerPageContainer>
                 <ContentContainer>

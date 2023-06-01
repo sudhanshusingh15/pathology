@@ -23,6 +23,14 @@ const LogoImage = styled.div`
     }
 `;
 
+const StyledLink = styled(Link)`
+    text-decoration: none;
+
+    &:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+    }
+`;
+
 // const LogoTitle = styled.h2`
 //     margin: 0;
 //     font-size: ${({size}) => (size ? size + "px" : "5em")};
@@ -40,9 +48,9 @@ export function WebsiteLogo(props) {
   return (
     <WebsiteLogoContainer>
         <LogoImage size={size} color={color}>
-            <Link to="./containers/HomePage">
+            <StyledLink to="/">
             <img src={WebsiteLogoImg} alt="website logo" />
-            </Link>
+            </StyledLink>
         </LogoImage>
         {/* <LogoTitle size={size}> Digitial Pathology </LogoTitle> */}
     </WebsiteLogoContainer>

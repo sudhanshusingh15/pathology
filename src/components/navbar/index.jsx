@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { WebsiteLogo } from "../websiteLogo";
+import { Link } from "react-router-dom";
 
 const NavbarContainer = styled.div`
     width: 100%;
@@ -9,6 +10,8 @@ const NavbarContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 0 1.5em;
+
+    background-color: ${({useTransparent}) => useTransparent ? "transparent" : "#07294D"};
 `;
     
 const AccessibilityContainer = styled.div`
@@ -20,14 +23,14 @@ const AnchorLinkContainer = styled.div`
     padding: 20px;
 `;
 
-const AnchorLink = styled.a`
+const AnchorLink = styled(Link)`
+    text-decoration: none !important;
     font-family: "FuturaCnd", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 600;
     font-style: normal;
     font-size: 19.2px;
     color: rgb(255, 255, 255);
     cursor: pointer;
-    text-decoration: none;
     outline: none;
     -webkit-font-smoothing: antialiased;
     display: inline; /* Change here */
@@ -78,24 +81,25 @@ const SepartionLine = styled.div`
 `;
 
 export function Navbar(props){
+    const {useTransparent} = props;
     return(
-        <NavbarContainer>
+        <NavbarContainer useTransparent= {useTransparent}>
             <WebsiteLogo/>
             <AccessibilityContainer>
                 <AnchorLinkContainer>
-                    <AnchorLink>LOG-IN</AnchorLink>
+                    <AnchorLink to="/user/access/signin">LOG-IN</AnchorLink>
                 </AnchorLinkContainer>
                 <SepartionLine/>
                 <AnchorLinkContainer>
-                    <AnchorLink>REGISTER</AnchorLink>
+                    <AnchorLink to="/user/access/signup">REGISTER</AnchorLink>
                 </AnchorLinkContainer>
                 <SepartionLine/>
                 <AnchorLinkContainer>
-                    <AnchorLink>UPLOAD</AnchorLink>
+                    <AnchorLink to="/upload">UPLOAD</AnchorLink>
                 </AnchorLinkContainer>
                 <SepartionLine/>
                 <AnchorLinkContainer>
-                    <AnchorLink>ABOUT</AnchorLink>
+                    <AnchorLink to="/about">ABOUT</AnchorLink>
                 </AnchorLinkContainer>
             </AccessibilityContainer>
         </NavbarContainer>
