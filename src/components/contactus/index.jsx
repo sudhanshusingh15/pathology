@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { WebsiteLogo } from "../websiteLogo";
 import { Marginer } from "../../components/marginer";
 import ContactUs from "../../images/contact_us.svg";
 import { Button } from "../../components/button";
 import { Link } from "react-router-dom";
+
+
 
 const ContactAdContainer = styled.div`
     width: 100%;
@@ -96,3 +98,4 @@ export function ContactAd(props) {
         </ContactAdContainer>
     )
 }
+

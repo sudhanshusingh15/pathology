@@ -4,17 +4,19 @@ import styled from "styled-components";
 const ButtonWrapper = styled.button`
   border: none;
   outline: none;
-  color: #fff;
-  padding: 6px 1em;
-  font-size: ${({ size }) => (size ? size + "px" : "18px")};
-  font-weight: 600;
+  color: white;
+  padding: 12px 2em; /* Increase padding for a larger button */
+  font-size: ${({ size }) => (size ? size + "px" : "24px")}; /* Increase font size */
+  font-weight: 300;
   border-radius: 3px;
-  background-color: #2a9d8f;
+  background-color: rgba(7, 41, 77, 0.9); /* Set background color with opacity */
   cursor: pointer;
   transition: all 200ms ease-in-out;
+  margin-top: 1em;
 
   &:hover {
-    background-color: #21867a;
+    background-color: #ffc600;
+    color: rgba(7, 41, 77, 0.9); 
   }
 
   &:focus {
@@ -22,12 +24,10 @@ const ButtonWrapper = styled.button`
   }
 `;
 
-export function Button(props) {
-  const { size } = props;
-
+export function Button({ size, onClick, children, className }) {
   return (
-    <ButtonWrapper size={size} className={props.className}>
-      {props.children}
+    <ButtonWrapper size={size} className={className} onClick={onClick}>
+      {children}
     </ButtonWrapper>
   );
 }

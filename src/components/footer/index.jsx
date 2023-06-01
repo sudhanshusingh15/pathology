@@ -66,7 +66,7 @@ const LeftBottomContainer = styled.div`
 const Title = styled.h2`
     margin: 0;
     margin-bottom: 13px;
-    color: #000000;
+    color: #07294D;
     font-weight: 600;
     font-size: 20px;
 
@@ -74,7 +74,7 @@ const Title = styled.h2`
 
 const FLink = styled.a`
     text-decoration: none;
-    color: #6F6F6F;
+    color: #07294D;
     font-weight: 500;
     margin-bottom: 8px;
 

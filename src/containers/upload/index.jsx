@@ -1,117 +1,116 @@
-import React from "react";
-import styled from "styled-components";
-import { InnerPageContainer, PageContainer } from "../../components/pageContainer";
+import React, { useState } from 'react';
+import { PageContainer, InnerPageContainer } from "../../components/pageContainer";
 import { Navbar } from "../../components/navbar";
 import { Footer } from "../../components/footer";
-import { deviceSize } from "../../components/responsive";
+import styled from "styled-components";
 import { Button } from "../../components/button2";
+import axios from 'axios';
 
-const ContentContainer = styled.div`
-  width: 100%;
-  max-width: ${deviceSize.laptop}px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  font-family: 'SF Pro', sans-serif;
-
-  @media screen and (max-width: ${deviceSize.mobile}px) {
-    padding: 5px;
-  }
+const UploadContainer = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2em;
 `;
 
-const Title = styled.h2`
-    box-sizing: border-box;
-    color: rgb(7, 41, 77);
-    display: block;
-    font-family: "FuturaCnd", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 55px;
-    font-style: normal;
-    font-weight: 700;
-    height: 132px;
-    letter-spacing: 2px;
-    line-height: 66px;
-    margin-block-end: 30px;
-    margin-block-start: 10px;
-    margin-bottom: 30px;
-    margin-inline-end: 0px;
-    margin-inline-start: 0px;
-    margin-left: 5em;
-    margin-right: 0px;
+const UploadForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+`;
+
+const FileName = styled.p`
     margin-top: 10px;
-    opacity: 1;
-    overflow-x: visible;
-    overflow-y: visible;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 0px;
-    position: relative;
-    text-align: center;
-    text-transform: uppercase;
-    transform: matrix(1, 0, 0, 1, 0, 0);
-    width: 800px;
-    -webkit-box-direction: normal;
-    -webkit-font-smoothing: antialiased;
-    
-`;
-const H3 = styled.h3`
     font-family: "FuturaCnd", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 35px;
-    font-style: normal;
-    font-weight: 600;
-    color: rgb(7, 41, 77);
-    letter-spacing: 1px;
-    line-height: 44px;
-    text-align: center;
-    text-transform: uppercase;
-    -webkit-font-smoothing: antialiased;
-`;
-
-const P = styled.p`
-    font-family: "FuturaCnd", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 20px;
-    font-style: normal;
+    font-size: 14px;
     font-weight: 400;
-    color: rgb(7, 41, 77);
-    letter-spacing: 0.5px;
-    line-height: 30px;
-    text-align: left;
-    -webkit-font-smoothing: antialiased;
+    color: #07294D;
+`;
+
+const HiddenUploadInput = styled.input`
+    display: none;
+`;
+
+const UploadText = styled.h2`
+    font-family: "FuturaCnd", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: #07294D;
+`;
+
+const UploadAnimation = styled.div`
+    display: ${props => (props.isUploading ? 'block' : 'none')};
+    margin-top: 2em;
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 5s linear infinite;
 `;
 
 
 
-export function UploadPage({ selectedFile, onFileChange, onFileUpload }) {
+export function UploadPage() {
+    const [isUploading, setIsUploading] = useState(false);
+    const [selectedFile, setSelectedFile] = useState(null);
+
+    const fileInput = React.createRef();
+
+    const handleFileSelect = event => {
+        setSelectedFile(event.target.files[0]?.name || null);
+    };
+
+    const handleUpload = event => {
+        event.preventDefault();
+        setIsUploading(true);
+        
+        const formData = new FormData();
+        formData.append('file', fileInput.current.files[0]);
+    
+        // axios.post('http://localhost:3000/upload', formData)
+        //     .then(response => {
+        //         console.log('File uploaded successfully');
+        //         setIsUploading(false);
+        //     })
+        //     .catch(error => {
+        //         console.error('There was an error uploading the file', error);
+        //         setIsUploading(false);
+        //     });
+    };
+
+    const triggerFileSelectPopup = (event) => {
+        event.preventDefault();
+        fileInput.current.click();
+    };
+
     return (
         <PageContainer>
             <Navbar />
             <InnerPageContainer>
-                <ContentContainer>
-                    <Title> Upload Image </Title>
-                    <H3>
-                        File Upload using React!
-                    </H3>
-                    <div>
-                        <input type="file" onChange={onFileChange} />
-                        <Button onClick={onFileUpload}>
-                            Upload!
+                <UploadContainer>
+                    <UploadText>Select an image to upload</UploadText>
+                    <UploadForm onSubmit={handleUpload}>
+                        <HiddenUploadInput 
+                            ref={fileInput}
+                            type="file" 
+                            accept="image/*" 
+                            onChange={handleFileSelect} 
+                        />
+                        <Button onClick={triggerFileSelectPopup}>
+                            Choose File
                         </Button>
-                    </div>
-                    {selectedFile && 
-                        <div>
-                            <H3>File Details:</H3>
-                            <P>File Name: {selectedFile.name}</P>
-                            <P>File Type: {selectedFile.type}</P>
-                            <P>Last Modified: {selectedFile.lastModifiedDate.toDateString()}</P>
-                        </div>}
-                    {!selectedFile &&
-                        <div>
-                            <br />
-                            <H3>Choose before Pressing the Upload button</H3>
-                        </div>}
-                </ContentContainer>
+                        <FileName>{selectedFile || 'No file selected'}</FileName>
+                        <Button type="submit">Upload</Button>
+                    </UploadForm>
+                    <UploadAnimation isUploading={isUploading} />
+                </UploadContainer>
             </InnerPageContainer>
             <Footer />
         </PageContainer>
-    )
+    );
 }
