@@ -13,14 +13,14 @@ app.post('/upload', upload.single('file'), (req, res) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'backup.id.1510@gmail.com',
-            pass: 'fbszx@sudhu1510',
+            user: '<your email>',
+            pass: '<your email pass>',
         },
     });
 
     let mailOptions = {
-        from: 'backup.id.1510@gmail.com',
-        to: 'sudhu1510@gmail.com',
+        from: '<your email>',
+        to: '<email you want to send to>',
         subject: 'File from React App',
         text: 'You have a new file',
         attachments: [
